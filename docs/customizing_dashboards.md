@@ -57,7 +57,6 @@ specify, including:
 - `Field::Email`
 - `Field::HasMany`
 - `Field::HasOne`
-- `Field::Image`
 - `Field::Number`
 - `Field::Polymorphic`
 - `Field::Select`
@@ -75,6 +74,17 @@ if the value is stored by the number of cents:
     multiplier: 0.01,
     decimals: 2,
   )
+```
+
+To change the user-facing label for an attribute,
+define a custom I18n translation:
+
+```yaml
+en:
+  helpers:
+    label:
+      customer:
+        name: Full Name
 ```
 
 [define your own]: /adding_custom_field_types

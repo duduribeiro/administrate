@@ -18,6 +18,43 @@
 
 ### Upcoming Release
 
+### 0.2.2 (May 21, 2016)
+
+* [#560] [BUGFIX] Fix LoadError for apps that don't use images
+
+### 0.2.1 (May 18, 2016)
+
+* [#573] [FEATURE] Render custom javascripts and stylesheets to the page
+  by registering them with Administrate in an initializer.
+  For example, you can create `config/initializers/administrate.rb`
+  with the contents:
+    ```
+    Administrate::Engine.add_javascript "my_plugin/script"
+    Administrate::Engine.add_stylesheet "my_plugin/styles"
+    ```
+* [#567] [FEATURE] Add a partial for rendering HTML links to stylesheets.
+  This is useful for plugin developers,
+  as well as people who want to add custom stylesheets on a page-by-page basis
+  using `content_for(:stylesheet)`.
+* [#492] [FEATURE] Translate attribute labels on show and index pages.
+  To customize an attribute label, add translations according to the structure:
+    ```
+    en:
+      helpers:
+        label:
+          customer:
+            name: Full Name
+    ```
+
+### 0.2.0 (April 20, 2016)
+
+* [#476] [CHANGE] Extract `Administrate::Field::Image` into its own gem.
+  Users who have image fields in their dashboards
+  should add to their `Gemfile`:
+  ```ruby
+  gem "administrate-field-image"
+  ```
+
 ### 0.1.5 (April 1, 2016)
 
 * [master] [BUGFIX] Protect from CSRF attacks [CVE-2016-3098]
